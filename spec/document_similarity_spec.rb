@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require "locality_sensitive_hashing"
+require "document_similarity"
 
-RSpec.describe LocalitySensitiveHashing do
+RSpec.describe DocumentSimilarity do
   it "has a version number" do
-    expect(LocalitySensitiveHashing::VERSION).not_to be nil
+    expect(DocumentSimilarity::VERSION).not_to be nil
   end
 end
 
