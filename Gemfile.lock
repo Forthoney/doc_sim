@@ -58,8 +58,8 @@ PLATFORMS
 DEPENDENCIES
   locality_sensitive_hashing!
   rake (~> 13.0)
-  rspec (~> 3.0)
-  rubocop (~> 1.21)
+  rspec (~> 3.12)
+  rubocop (~> 1.56)
 
 BUNDLED WITH
    2.4.19
