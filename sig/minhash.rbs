@@ -1,0 +1,15 @@
+module Minhash
+  # Class for generating Minhash signature
+  class Minhash
+    attr_reader seed_root: Integer 
+
+    def initialize: (?Integer n_hashes, ?Integer seed_root) -> void
+
+    # Produces the Minhash signature for a given Set
+    #
+    # @param set [Set] the set to produce the signature for
+    #
+    # @return [Array[Integer]] 32 bit integer array of length n_hashes
+    def signature: (Set[String] set) -> Array[Integer]
+  end
+end
