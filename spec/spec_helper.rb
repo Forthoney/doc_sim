@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "locality_sensitive_hashing"
+require "document_similarity"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

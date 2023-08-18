@@ -1,0 +1,16 @@
+# TypeProf 0.21.3
+
+# Classes
+module LocalitySensitiveHashing
+  class LocalitySensitiveHashing
+    @buckets: Array[Hash[Set[Integer], Array[Integer]]]
+    @n_rows: Integer
+
+    def initialize: (Integer n_rows, Integer n_bands) -> void
+    def insert: (Set[Integer] signature, Integer id) -> void 
+    def similar_pairs: -> Set[Array[Integer]]
+
+    private
+    def generate_band_bucket: -> Hash[Set[Integer], Array[Integer]]
+  end
+end
