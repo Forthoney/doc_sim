@@ -19,3 +19,16 @@ Gemspec/DevelopmentDependencies:
 
 Gemspec/RequireMFA:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - spec/**/*.rb
+    - document_similarity.gemspec
+
+Naming/MethodParameterName:
+  AllowedNames:
+    - x
+    - y
+    - z
+    - k

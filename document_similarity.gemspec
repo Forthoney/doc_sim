@@ -8,7 +8,9 @@ Gem::Specification.new do |spec|
   spec.authors = ["Forthoney"]
   spec.email = ["castlehoneyjung@gmail.com"]
 
-  spec.summary = "Calculating approximate document similarity with locality sensitive hashing algorithm using Minhash signatures"
+  spec.summary = "Calculating approximate document similarity with" \
+                 "locality sensitive hashing algorithm " \
+                 "using Minhash signatures"
   # spec.description = "LO"
   spec.homepage = "https://github.com/Forthoney/document_similarity"
   spec.license = "MIT"
@@ -38,6 +40,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rspec", "~> 3.12"
   spec.add_development_dependency "rubocop", "~> 1.56"
+  spec.add_development_dependency "steep", "~> 1.5.3"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

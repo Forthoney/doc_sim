@@ -8,13 +8,13 @@ module LocalitySensitiveHashing
       @n_rows = n_rows
     end
 
-    def insert(signature, id)
+    def insert(signature, doc_id)
       if signature.length != @n_rows * buckets.length
         raise(ArgumentError, "signature length does not match n_rows and n_bands")
       end
 
       signature.each_slice(n_rows).with_index do |band_signature, band_idx|
-        @buckets[band_idx][band_signature] << id
+        @buckets[band_idx][band_signature] << doc_id
       end
     end
 
