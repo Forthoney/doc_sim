@@ -1,0 +1,3 @@
+module Shingling
+  def self.shingle: (String document, Integer k) -> Array[String]
+end
