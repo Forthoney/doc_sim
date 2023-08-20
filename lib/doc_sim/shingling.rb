@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Shingle a document
 module Shingling
   def self.shingle(document, k)
     max_index = document.length - k + 1
