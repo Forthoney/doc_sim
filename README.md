@@ -1,8 +1,6 @@
-# LocalitySensitiveHashing
+# Document Similarity - Efficient probablistic algorithm for calculating document similarity
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/locality_sensitive_hashing`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Ruby implementation of [Mining of Massive Datasets](http://www.mmds.org/)'s document similarity algorithm. It uses Minhash and Localitiy Sensitive Hashing to efficiently find documents with a high probability of being similar.
 
 ## Installation
 
@@ -18,7 +16,13 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Shingle your documents using `Shingling.shingle` (k-shingling). The optimal k value differs based on the type of argument, but 5 is a good first guess.
+2. Initialize a `Minhash::Minhash`.
+3. Use the `Minhash.signature` to get the signature array for each document.
+4. Initialize a `LocalitySensitiveHashing::LocalitySensitiveHashing` with appropriate band and row length, depending on your desired precision and recall.
+5. `insert` each signaturea array with its index into the LSH
+6. Take all potentially similar pairs (candiate pairs) from the LSH
+7. (Optional) Rigorously calculate the similarity between the candidate pairs. This will need to be done manually.
 
 ## Development
 
@@ -28,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/locality_sensitive_hashing. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/locality_sensitive_hashing/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/Forthoney/document_similarity. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/Forthoney/document_similarity/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -36,4 +40,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the LocalitySensitiveHashing project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/locality_sensitive_hashing/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the LocalitySensitiveHashing project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/Forthoney/document_similarity/blob/main/CODE_OF_CONDUCT.md).
