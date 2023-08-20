@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    document_similarity (0.1.0)
+    doc_sim (0.1.0)
       murmurhash3 (~> 0.1.7)
 
 GEM
@@ -97,7 +97,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  document_similarity!
+  doc_sim!
   rake (~> 13.0)
   rspec (~> 3.12)
   rubocop (~> 1.56)

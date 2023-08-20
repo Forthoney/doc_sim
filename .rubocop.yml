@@ -24,7 +24,7 @@ Metrics/BlockLength:
   Enabled: true
   Exclude:
     - spec/**/*.rb
-    - document_similarity.gemspec
+    - doc_sim.gemspec
 
 Naming/MethodParameterName:
   AllowedNames:

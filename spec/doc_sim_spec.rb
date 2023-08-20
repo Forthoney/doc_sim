@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "document_similarity"
+require "doc_sim"
 
 RSpec.describe DocumentSimilarity do
   it "has a version number" do
