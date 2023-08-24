@@ -5,8 +5,7 @@ target :lib do
    signature "sig"
 
    check "lib"                       # Directory name
-   check "Gemfile"                   # File name
-   check "app/models/**/*.rb"        # Glob
+   ignore "Gemfile"
    # ignore "lib/templates/*.rb"
 
    # library "pathname"              # Standard libraries
