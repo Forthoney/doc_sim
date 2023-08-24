@@ -13,7 +13,7 @@ RSpec.describe Shingling do
         efghi
         fghij
         ghijk
-      ]
+      ].to_set
     end
 
     it "shingles with k = 6" do
@@ -25,7 +25,7 @@ RSpec.describe Shingling do
         defghi
         efghij
         fghijk
-      ]
+      ].to_set
     end
 
     it "shingles with k = 1" do
@@ -42,7 +42,7 @@ RSpec.describe Shingling do
         i
         j
         k
-      ]
+      ].to_set
     end
   end
 
@@ -57,7 +57,7 @@ RSpec.describe Shingling do
         " shor",
         "short",
         "hort."
-      ]
+      ].to_set
     end
   end
 end
