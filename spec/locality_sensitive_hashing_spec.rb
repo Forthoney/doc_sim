@@ -13,7 +13,7 @@ RSpec.describe LocalitySensitiveHashing::LocalitySensitiveHashing do
 
       expect(lsh.similar_pairs).to eq Set[[1, 2]]
     end
-    
+
     it "recognizes completely different signatures as not similar" do
       lsh = LocalitySensitiveHashing::LocalitySensitiveHashing.new(2, 2)
       sig1 = [1, 2, 3, 4]

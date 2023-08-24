@@ -1,24 +1,25 @@
 # frozen_string_literal: true
+
 D = Steep::Diagnostic
 
 target :lib do
-   signature "sig"
+  signature "sig"
 
-   check "lib"                       # Directory name
-   ignore "Gemfile"
-   # ignore "lib/templates/*.rb"
+  check "lib" # Directory name
+  ignore "Gemfile"
+  # ignore "lib/templates/*.rb"
 
-   # library "pathname"              # Standard libraries
-   # library "strong_json"           # Gems
+  # library "pathname"              # Standard libraries
+  # library "strong_json"           # Gems
 
-   # configure_code_diagnostics(D::Ruby.default)      # `default` diagnostics setting (applies by default)
-   # configure_code_diagnostics(D::Ruby.strict)       # `strict` diagnostics setting
-   # configure_code_diagnostics(D::Ruby.lenient)      # `lenient` diagnostics setting
-   # configure_code_diagnostics(D::Ruby.silent)       # `silent` diagnostics setting
-   # configure_code_diagnostics do |hash|             # You can setup everything yourself
-   #   hash[D::Ruby::NoMethod] = :information
-   # end
- end
+  # configure_code_diagnostics(D::Ruby.default)      # `default` diagnostics setting (applies by default)
+  # configure_code_diagnostics(D::Ruby.strict)       # `strict` diagnostics setting
+  # configure_code_diagnostics(D::Ruby.lenient)      # `lenient` diagnostics setting
+  # configure_code_diagnostics(D::Ruby.silent)       # `silent` diagnostics setting
+  # configure_code_diagnostics do |hash|             # You can setup everything yourself
+  #   hash[D::Ruby::NoMethod] = :information
+  # end
+end
 
 # target :test do
 #   signature "sig", "sig-private"
