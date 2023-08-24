@@ -3,14 +3,14 @@
 # Classes
 module LocalitySensitiveHashing
   class LocalitySensitiveHashing
-    @buckets: Array[Hash[Set[Integer], Array[Integer]]]
+    @buckets: Array[Hash[Array[Integer], Array[Integer]]]
     @n_rows: Integer
 
     def initialize: (Integer n_rows, Integer n_bands) -> void
-    def insert: (Set[Integer] signature, Integer id) -> void 
+    def insert: (Array[Integer] signature, Integer id) -> void 
     def similar_pairs: -> Set[Array[Integer]]
 
     private
-    def generate_band_bucket: -> Hash[Set[Integer], Array[Integer]]
+    def generate_band_bucket: -> Hash[Array[Integer], Array[Integer]]
   end
 end

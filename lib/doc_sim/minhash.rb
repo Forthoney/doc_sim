@@ -7,6 +7,9 @@ module Minhash
   class Minhash
     attr_reader :seed_root
 
+    # Hashes will always be <= 2**32
+    HASH_MAX = (2**32) + 1
+
     def initialize(n_hashes = 1, seed_root = rand(2**32))
       @seed_root = seed_root
       @hashes = Array.new(n_hashes) do |seed|
@@ -16,11 +19,11 @@ module Minhash
 
     # Produces the Minhash signature for a given Set
     #
-    # @param set [Set] the set to produce the signature for
+    # @param set [Set[String]] the set to produce the signature for
     #
     # @return [Array[Integer]] 32 bit integer array of length n_hashes
     def signature(set)
-      counter = Array.new(@hashes.length, Float::INFINITY)
+      counter = Array.new(@hashes.length, Minhash::HASH_MAX)
       set.each do |elem|
         @hashes.each_with_index do |hash_func, i|
           counter[i] = [counter[i], hash_func.call(elem)].min
