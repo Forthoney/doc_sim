@@ -16,14 +16,14 @@ module Minhash
 
     # Produces the Minhash signature for a given Set
     #
-    # @param set [Set] the set to produce the signature for
+    # @params [Enumerable[String]] the elements
     #
     # @return [Array[Integer]] 32 bit integer array of length n_hashes
-    def signature(set)
+    def signature(elems)
       counter = Array.new(@hashes.length, Float::INFINITY)
-      set.each do |elem|
+      elems.each do |el|
         @hashes.each_with_index do |hash_func, i|
-          counter[i] = [counter[i], hash_func.call(elem)].min
+          counter[i] = [counter[i], hash_func.call(el)].min
         end
       end
       counter

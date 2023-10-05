@@ -2,10 +2,15 @@
 
 # Shingle a document
 module Shingling
-  def self.shingle(document, k)
+  def self.each_shingle(document, k)
     max_index = document.length - k + 1
-    max_index.times.map do |i|
-      document[i...(i + k)]
+
+    if block_given?
+      max_index.times do |i|
+        yield(document[i...(i + k)])
+      end
+    else
+      max_index.times.map { |i| document[i...(i + k)] }
     end
   end
 end

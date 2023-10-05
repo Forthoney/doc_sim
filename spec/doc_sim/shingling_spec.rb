@@ -4,7 +4,7 @@ RSpec.describe Shingling do
   context "given a string with no spaces" do
     doc = "abcdefghijk"
     it "shingles with k = 5" do
-      shingles = Shingling.shingle(doc, 5)
+      shingles = Shingling.each_shingle(doc, 5).to_a
       expect(shingles).to eq %w[
         abcde
         bcdef
@@ -17,7 +17,7 @@ RSpec.describe Shingling do
     end
 
     it "shingles with k = 6" do
-      shingles = Shingling.shingle(doc, 6)
+      shingles = Shingling.each_shingle(doc, 6).to_a
       expect(shingles).to eq %w[
         abcdef
         bcdefg
@@ -29,7 +29,7 @@ RSpec.describe Shingling do
     end
 
     it "shingles with k = 1" do
-      shingles = Shingling.shingle(doc, 1)
+      shingles = Shingling.each_shingle(doc, 1).to_a
       expect(shingles).to eq %w[
         a
         b
@@ -49,7 +49,7 @@ RSpec.describe Shingling do
   context "given a short sentence" do
     doc = "I'm short."
     it "shingles with k = 5" do
-      shingles = Shingling.shingle(doc, 5)
+      shingles = Shingling.each_shingle(doc, 5).to_a
       expect(shingles).to eq [
         "I'm s",
         "'m sh",
