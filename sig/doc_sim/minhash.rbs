@@ -1,7 +1,12 @@
 module Minhash
   # Class for generating Minhash signature
   class Minhash
+    @seed_root: Integer
+    @hashes: Array[^(String) -> Integer]
+
     attr_reader seed_root: Integer
+
+    HASH_MAX: Integer
 
     def initialize: (?Integer n_hashes, ?Integer seed_root) -> void
 

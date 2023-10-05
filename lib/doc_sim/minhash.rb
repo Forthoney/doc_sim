@@ -7,6 +7,9 @@ module Minhash
   class Minhash
     attr_reader :seed_root
 
+    # Hashes will always be <= 2**32
+    HASH_MAX = (2**32) + 1
+
     def initialize(n_hashes = 1, seed_root = rand(2**32))
       @seed_root = seed_root
       @hashes = Array.new(n_hashes) do |seed|

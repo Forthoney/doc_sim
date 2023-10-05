@@ -1,0 +1,9 @@
+---
+name: ast
+version: '2.4'
+source:
+  type: git
+  name: ruby/gem_rbs_collection
+  revision: a4c633634493ab7ae73219022f56acff56ab69af
+  remote: https://github.com/ruby/gem_rbs_collection.git
+  repo_dir: gems

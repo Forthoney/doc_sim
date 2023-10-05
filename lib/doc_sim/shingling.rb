@@ -10,7 +10,7 @@ module Shingling
         yield(document[i...(i + k)])
       end
     else
-      max_index.times.map { |i| document[i...(i + k)] }
+      max_index.times.to_set { |i| document[i...(i + k)] }
     end
   end
 end
