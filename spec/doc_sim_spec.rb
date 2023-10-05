@@ -17,8 +17,8 @@ RSpec.describe DocumentSimilarity do
     lsh = LocalitySensitiveHashing::LocalitySensitiveHashing.new(r, b)
     minhash = Minhash::Minhash.new(r * b)
 
-    sig1 = Shingling.shingle(s1, k)
-    sig2 = Shingling.shingle(s2, k)
+    sig1 = Shingling::ShingledDocument.new(s1, k)
+    sig2 = Shingling::ShingledDocument.new(s2, k)
 
     lsh.insert(minhash.signature(sig1), 1)
     lsh.insert(minhash.signature(sig2), 2)
