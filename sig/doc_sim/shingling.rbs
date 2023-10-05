@@ -1,3 +1,16 @@
+# Shingle a document
 module Shingling
-  def self.each_shingle: (String document, Integer k) { (String) -> void } -> Integer | Array[String]
+  class ShingledDocument
+    @document: String
+
+    @k: Integer
+
+    def initialize: (String document, Integer k) -> void
+
+    def each: () ?{ (String) -> untyped } -> (Integer | Set[String])
+
+    private
+
+    def max_index: () -> Integer
+  end
 end
